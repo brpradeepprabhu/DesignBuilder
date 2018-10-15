@@ -9,12 +9,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="lib/bootstrap.min.css">
-    
+
     <script src="lib/jquery.3.3.1.min.js"></script>
     <script src="lib/jquery.min.js"></script>
     <script src="lib/popper.1.14.3.min.js"></script>
     <script src="lib/bootstrap.min.js"></script>
     <script src="main.js"></script>
+    <script src="grid.js"></script>
 </head>
 
 <body>
@@ -32,10 +33,14 @@
     </nav>
     <div class="row">
         <div class="col-3" id='menu'>
-
+            <div class='row'>
+                <div class="col-6"><input class='form-control' id='gridValue'>
+                </div>
+                <div class="col-6"><button class='btn btn-primary' id='AddGridClick'>Add</button></div>
+            </div>
         </div>
-        <div class="col-9">
-            <div class="container-fluid" style='padding:0' id='parentContainer'>
+        <div class="col-9" >
+            <div class="container-fluid" style='padding:20px; border:1px solid gray' id='parentContainer' onclick='selectedParent(event,this)'>
             </div>
         </div>
     </div>

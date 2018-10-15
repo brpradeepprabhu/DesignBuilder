@@ -1,7 +1,8 @@
-var designJSON={};
+var designJSON = {};
+var parentContainer ;
 window.onload = function () {
     let menu = '<div class="accordion" id="accordionExample">';
-
+    parentContainer = $('#parentContainer')
     $.get('./assets/design.json', (data) => {
         designJSON = data;
         const menuHeader = Object.keys(data);
@@ -32,16 +33,15 @@ window.onload = function () {
             }
             body += '</div> </div></div>';
             menu += header + body;
-            console.log(menu);
 
         }
         $('#menu').append(menu);
     })
+    
 }
 
 function genearateElement(ele) {
-    const data =$(ele).attr("data-id");
+    const data = $(ele).attr("data-id");
     const jsonData = data.split("**");
-    console.log(designJSON[jsonData[0]][jsonData[1]])
-    $(parentContainer).append(designJSON[jsonData[0]][jsonData[1]])
+    parentContainer.append(designJSON[jsonData[0]][jsonData[1]])
 }
